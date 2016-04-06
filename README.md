@@ -7,7 +7,7 @@ Unlike other frameworks like Rails, which use _Model View Controller_.
 
 **Models** are classes that provide access to the data; Django has a great ORM.
 
-```
+```py
 class Location(models.Model):
     name = models.CharField(max_length=200)
 
@@ -22,14 +22,14 @@ Event.objects.filter(location=draft_board).count()
 
 **Views** are just functions that return an HTTP response.
 
-```
+```py
 def index(request):
     return HttpResponse('Welcome to my website!')
 ```
 
 **Templates** are files which are used to construct the response; usually HTML (but can be anything).
 
-```
+```py
 <html>
   <ul>
     {% for event in event_list %}
@@ -45,7 +45,7 @@ Apps are the reason Django is so popular. They're just Python modules, but can b
 
 When developing a Django project, you create your own apps too!
 
-```
+```sh
 $ django-admin startapp meetup
 ```
 
