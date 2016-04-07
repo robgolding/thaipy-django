@@ -1,5 +1,18 @@
-Django
-======
+Django ("from the ground up")
+=============================
+
+> The web framework for perfectionists with deadlines.
+
+* No magic!
+* "Batteries included"
+  - ORM, database connection handling + migrations
+  - Template language
+  - Forms
+  - Authentication + sessions
+  - Static media
+  - etc.
+* Very stable APIs, long deprecation policies
+* Huge developer community
 
 ## Model View Template
 
@@ -41,12 +54,36 @@ def index(request):
 
 ## Apps
 
-Apps are the reason Django is so popular. They're just Python modules, but can be plugged into any project.
+Apps are the reason Django is so popular. They're just Python modules, but can be plugged into any project. `django-registration` is a great example.
 
 When developing a Django project, you create your own apps too!
 
+Apps contain your `models.py`, `urls.py`, `views.py` etc.
+
+## A Typical Project
+
 ```sh
-$ django-admin startapp meetup
+$ django-admin startproject my_project
 ```
 
-Apps contain your `models.py`, `urls.py`, `views.py` etc.
+```
+├── manage.py
+└── thaipy
+    ├── meetup
+    │   ├── admin.py
+    │   ├── migrations
+    │   │   └── 0001_initial.py
+    │   ├── models.py
+    │   ├── tests.py
+    │   ├── urls.py
+    │   └── views.py
+    ├── settings.py
+    ├── static
+    │   ├── css
+    │   ├── img
+    │   └── js
+    ├── templates
+    │   ├── base.html
+    │   └── index.html
+    └── urls.py
+```
